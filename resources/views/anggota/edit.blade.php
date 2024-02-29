@@ -13,9 +13,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="kd_anggota" class="col-md-4 col-form-label text-right">Kode Anggota</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="kd_anggota" class="form-control" name="kd_anggota"
-                                            required autofocus value="{{ $user->kd_anggota }}">
+                                            required autofocus value="{{ $anggota->kd_anggota }}">
                                         @if ($errors->has('kd_anggota'))
                                             <span class="text-danger">{{ $errors->first('kd_anggota') }}</span>
                                         @endif
@@ -24,9 +24,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="nm_anggota" class="col-md-4 col-form-label text-right">Nama Anggota</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="nm_anggota" class="form-control" name="nm_anggota"
-                                            required autofocus value="{{ $user->nm_anggota }}">
+                                            required autofocus value="{{ $anggota->nm_anggota }}">
                                         @if ($errors->has('nm_anggota'))
                                             <span class="text-danger">{{ $errors->first('nm_anggota') }}</span>
                                         @endif
@@ -38,9 +38,9 @@
                                     <div class="col-md-6">
                                         <select class="form-select" id="jk" name="jk" aria-label="jk">
                                             <option value="">Choose</option>
-                                            <option value="L" {{ $user->jk == 'L' ? 'selected' : '' }}>
+                                            <option value="L" {{ $anggota->jk == 'L' ? 'selected' : '' }}>
                                                 Laki Laki</option>
-                                            <option value="P" {{ $user->jk == 'P' ? 'selected' : '' }}>
+                                            <option value="P" {{ $anggota->jk == 'P' ? 'selected' : '' }}>
                                                 Perempuan</option>
                                         </select>
                                         @if ($errors->has('jk'))
@@ -51,9 +51,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="tp_lahir" class="col-md-4 col-form-label text-right">Tempat Lahir</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="tp_lahir" class="form-control" name="tp_lahir" required
-                                            autofocus value="{{ $user->tp_lahir }}">
+                                            autofocus value="{{ $anggota->tp_lahir }}">
                                         @if ($errors->has('tp_lahir'))
                                             <span class="text-danger">{{ $errors->first('tp_lahir') }}</span>
                                         @endif
@@ -62,9 +62,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="tg_lahir" class="col-md-4 col-form-label text-right">Tempat Lahir</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="tg_lahir" class="form-control" name="tg_lahir" required
-                                            autofocus value="{{ $user->tg_lahir }}">
+                                            autofocus value="{{ $anggota->tg_lahir }}">
                                         @if ($errors->has('tg_lahir'))
                                             <span class="text-danger">{{ $errors->first('tg_lahir') }}</span>
                                         @endif
@@ -73,9 +73,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="alamat" class="col-md-4 col-form-label text-right">Alamat</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="alamat" class="form-control" name="alamat" required
-                                            autofocus value="{{ $user->alamat }}">
+                                            autofocus value="{{ $anggota->alamat }}">
                                         @if ($errors->has('alamat'))
                                             <span class="text-danger">{{ $errors->first('alamat') }}</span>
                                         @endif
@@ -84,9 +84,9 @@
                                 <div class="form-group row mt-3">
                                     <label for="no_hp" class="col-md-4 col-form-label text-right">No Handphone</label>
                                     <div class="col-md-6">
-                                        <input type="hidden" id="id" name="id" value="{{ $user->id }}">
+                                        <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="no_hp" class="form-control" name="no_hp" required
-                                            autofocus value="{{ $user->no_hp }}">
+                                            autofocus value="{{ $anggota->no_hp }}">
                                         @if ($errors->has('no_hp'))
                                             <span class="text-danger">{{ $errors->first('no_hp') }}</span>
                                         @endif
@@ -97,9 +97,9 @@
                                         Anggota</label>
                                     <div class="col-md-6">
                                         <input type="hidden" id="id" name="id"
-                                            value="{{ $user->id }}">
+                                            value="{{ $anggota->id }}">
                                         <input type="text" id="jns_anggota" class="form-control" name="jns_anggota"
-                                            required autofocus value="{{ $user->jns_anggota }}">
+                                            required autofocus value="{{ $anggota->jns_anggota }}">
                                         @if ($errors->has('jns_anggota'))
                                             <span class="text-danger">{{ $errors->first('jns_anggota') }}</span>
                                         @endif

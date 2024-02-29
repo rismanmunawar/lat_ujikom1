@@ -31,7 +31,7 @@ class AnggotaController extends Controller
             'alamat' => 'required',
             'no_hp' => 'required',
             'jns_anggota' => 'required',
-            'jml_pjm' => 'required|in:admin,anggota',
+            // 'jml_pjm' => 'required|in:admin,anggota',
         ]);
 
         AnggotaModel::create($request->all());
@@ -40,17 +40,17 @@ class AnggotaController extends Controller
             ->with('success', 'Anggota created successfully.');
     }
 
-    public function edit(AnggotaModel $anggota)
+    public function edit($id)
     {
-        $title = "Edit";
+        $title = "Anggota";
+        $anggota = AnggotaModel::find($id);
         return view('anggota.edit', compact('anggota', 'title'));
     }
 
-    public function update(Request $request, AnggotaModel $anggota)
+    public function update(Request $request, $id)
     {
-        $title = "Pengembalian";
         $request->validate([
-            'kd_anggota' => 'required|unique:anggotas,kd_anggota,' . $anggota->id,
+            'kd_anggota' => 'required',
             'nm_anggota' => 'required',
             'jk' => 'required',
             'tp_lahir' => 'required',
@@ -59,24 +59,17 @@ class AnggotaController extends Controller
             'no_hp' => 'required',
             'jns_anggota' => 'required',
         ]);
-
-
-        $anggota->kd_anggota = $request->kd_anggota;
-        $anggota->nm_anggota = $request->nm_anggota;
-        $anggota->jk = $request->jk;
-        $anggota->tp_lahir = $request->tp_lahir;
-        $anggota->tg_lahir = $request->tg_lahir;
-        $anggota->alamat = $request->alamat;
-        $anggota->no_hp = $request->no_hp;
-        $anggota->jns_anggota = $request->jns_anggota;
-
-        $anggota->save();
-
-        return redirect()->route('users.index')->withSuccess('Great! You have Successfully updated');
+        $anggota = AnggotaModel::find($id);
+        // Update data anggota dengan data yang dikirimkan dari form
+        $anggota->update($request->all());
+        // Redirect kembali ke halaman yang sesuai
+        return redirect()->route('anggota.index')->withSuccess('Anggota berhasil diperbarui');
     }
-    public function destroy(AnggotaModel $anggota)
+
+    public function destroy($id)
     {
+        $anggota = AnggotaModel::find($id);
         $anggota->delete();
-        return redirect()->route('anggota.index')->with('success', 'anggota has been deleted successfully');
+        return redirect()->route('anggota.index')->withSuccess('Anggota berhasil dihapus');
     }
 }
