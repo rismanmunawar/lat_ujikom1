@@ -63,7 +63,7 @@ class AuthController extends Controller
                 ->withSuccess('You have Successfully loggedin with token');
         }
 
-        return redirect("login", compact('title'))->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->with(compact('title'))->withSuccess('Oppes! You have entered invalid credentials');
     }
 
     /**
@@ -99,7 +99,8 @@ class AuthController extends Controller
         $title = "Dashboard";
 
         if (Auth::check()) {
-            return view('dashboard', ['title' => $title]);
+            $nm_pengguna = Auth::user()->nm_pengguna;
+            return view('dashboard', ['title' => $title, 'nm_pengguna' => $nm_pengguna]);
         }
 
         return redirect("login")->with('success', 'Oops! You do not have access');

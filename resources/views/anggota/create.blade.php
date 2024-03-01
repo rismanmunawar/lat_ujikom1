@@ -1,15 +1,15 @@
 @extends('layouts.layout')
 @section('content')
     <main class="login-form">
-        <div class="cotainer">
+        <section class="section" style="margin: 3rem">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">Add Anggota</div>
                         <div class="card-body">
                             <form action="{{ route('anggota.store') }}" method="POST">
                                 @csrf
-                                <div class="form-group row mt-3">
+                                {{-- <div class="form-group row mt-3">
                                     <label for="kd_anggota" class="col-md-4 col-form-label text-right">Kode Anggota</label>
                                     <div class="col-md-6">
                                         <input type="text" id="kd_anggota" class="form-control" name="kd_anggota"
@@ -18,7 +18,18 @@
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
                                     </div>
+                                </div> --}}
+                                <div class="form-group row mt-3">
+                                    <label for="kd_anggota" class="col-md-4 col-form-label text-right">Kode Anggota</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="kd_anggota" class="form-control" name="kd_anggota"
+                                            value="{{ $nextKode }}" required autofocus readonly>
+                                        @if ($errors->has('kd_anggota'))
+                                            <span class="text-danger">{{ $errors->first('kd_anggota') }}</span>
+                                        @endif
+                                    </div>
                                 </div>
+
                                 <div class="form-group row mt-3">
                                     <label for="nm_anggota" class="col-md-4 col-form-label text-right">Nama Anggota</label>
                                     <div class="col-md-6">
@@ -48,8 +59,8 @@
                                     <div class="col-md-6">
                                         <input type="text" id="tp_lahir" class="form-control" name="tp_lahir" required
                                             autofocus>
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @if ($errors->has('tp_lahir'))
+                                            <span class="text-danger">{{ $errors->first('tp_lahir') }}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -60,8 +71,8 @@
                                     <div class="col-md-6">
                                         <input type="date" id="tg_lahir" class="form-control" name="tg_lahir" required
                                             autofocus>
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @if ($errors->has('tg_lahir'))
+                                            <span class="text-danger">{{ $errors->first('tg_lahir') }}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -71,8 +82,8 @@
                                     <div class="col-md-6">
                                         <input type="text" id="alamat" class="form-control" name="alamat" required
                                             autofocus>
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @if ($errors->has('alamat'))
+                                            <span class="text-danger">{{ $errors->first('alamat') }}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -82,8 +93,8 @@
                                     <div class="col-md-6">
                                         <input type="number" id="no_hp" class="form-control" name="no_hp" required
                                             autofocus>
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @if ($errors->has('no_hp'))
+                                            <span class="text-danger">{{ $errors->first('no_hp') }}</span>
                                         @endif
                                     </div>
                                 </div>
@@ -117,6 +128,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 @endsection

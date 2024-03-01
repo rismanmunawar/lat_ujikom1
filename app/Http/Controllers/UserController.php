@@ -11,15 +11,17 @@ class UserController extends Controller
 {
     public function index()
     {
+        $nm_pengguna = $this->currentUser->nm_pengguna;
         $users = User::All();
         $title = "Users";
-        return view('users/index', compact('users', 'title'));
+        return view('users/index', compact('users', 'title', 'nm_pengguna'));
     }
 
     public function create()
     {
+        $nm_pengguna = $this->currentUser->nm_pengguna;
         $title = "Users";
-        return view('users/create', compact('title'));
+        return view('users/create', compact('title', 'nm_pengguna'));
     }
 
     public function store(Request $request)
@@ -46,8 +48,9 @@ class UserController extends Controller
 
     public function edit(User $user)
     {
+        $nm_pengguna = $this->currentUser->nm_pengguna;
         $title = "Edit";
-        return view('users.edit', compact('user', 'title'));
+        return view('users.edit', compact('user', 'title', 'nm_pengguna'));
     }
 
     public function update(Request $request, User $user)

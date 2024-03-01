@@ -73,11 +73,13 @@
                                 </div>
                                 <div class="col-md-6 offset-md-4 mt-3 p-2 d-grid">
                                     <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save"></i>
                                         Save
                                     </button>
-                                    <button class="btn btn-danger mt-2" onclick="history.back()">
+                                    <a href="{{ route('users.index') }}" class="btn btn-danger mt-2">
+                                        <i class="bi bi-x"></i>
                                         Cancel
-                                    </button>
+                                    </a>
                                 </div>
                             </form>
                         </div>

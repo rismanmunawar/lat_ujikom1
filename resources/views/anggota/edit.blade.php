@@ -1,9 +1,9 @@
 @extends('layouts.layout')
 @section('content')
     <main class="login-form">
-        <div class="cotainer">
+        <section class="section" style="margin: 3rem">
             <div class="row justify-content-center">
-                <div class="col-md-10">
+                <div class="col-12">
                     <div class="card">
                         <div class="card-header">Edit Anggota</div>
                         <div class="card-body">
@@ -15,7 +15,7 @@
                                     <div class="col-md-6">
                                         <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
                                         <input type="text" id="kd_anggota" class="form-control" name="kd_anggota"
-                                            required autofocus value="{{ $anggota->kd_anggota }}">
+                                            readonly autofocus value="{{ $anggota->kd_anggota }}">
                                         @if ($errors->has('kd_anggota'))
                                             <span class="text-danger">{{ $errors->first('kd_anggota') }}</span>
                                         @endif
@@ -85,8 +85,8 @@
                                     <label for="no_hp" class="col-md-4 col-form-label text-right">No Handphone</label>
                                     <div class="col-md-6">
                                         <input type="hidden" id="id" name="id" value="{{ $anggota->id }}">
-                                        <input type="text" id="no_hp" class="form-control" name="no_hp" required
-                                            autofocus value="{{ $anggota->no_hp }}">
+                                        <input type="text" id="no_hp" class="form-control" name="no_hp"
+                                            required autofocus value="{{ $anggota->no_hp }}">
                                         @if ($errors->has('no_hp'))
                                             <span class="text-danger">{{ $errors->first('no_hp') }}</span>
                                         @endif
@@ -107,14 +107,19 @@
                                 </div>
                                 <div class="col-md-6 offset-md-4 mt-3 p-2 d-grid">
                                     <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-save"></i>
                                         Save
                                     </button>
+                                    <a href="{{ route('anggota.index') }}" class="btn btn-danger mt-2">
+                                        <i class="bi bi-x"></i>
+                                        Cancel
+                                    </a>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 @endsection

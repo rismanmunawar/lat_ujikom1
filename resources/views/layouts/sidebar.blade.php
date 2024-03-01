@@ -56,37 +56,89 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item  ">
-                            <a href="{{ route('users.index') }}" class="submenu-link">Users</a>
+                            <a href="{{ route('users.index') }}" class="submenu-link">
+                                <i class="bi bi-person-fill"></i> Users</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="{{ route('anggota.index') }}" class="submenu-link">Anggota</a>
+                            <a href="{{ route('anggota.index') }}" class="submenu-link">
+                                <i class="bi bi-people-fill"></i> Anggota</a>
                         </li>
                         <li class="submenu-item  ">
-                            <a href="extra-component-date-picker.html" class="submenu-link">Buku</a>
+                            <a href="{{ route('koleksi.index') }}" class="submenu-link">
+                                <i class="bi bi-folder-fill"></i> Koleksi</a>
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('pinjam.index') }}" class='sidebar-link'>
-                        <i class="bi bi-book"></i>
-                        <span>Peminjaman</span>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-arrow-repeat"></i>
+                        <span>Transaksi</span>
                     </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="{{ route('pinjam.index') }}" class="submenu-link"'>
+                                <i class="bi bi-book-fill"></i>
+                                <span> Peminjaman</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ route('kembali.index') }}" class="submenu-link"'>
+                                <i class="bi bi-arrow-left-right"></i>
+                                <span> Pengembalian</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('kembali.index') }}" class='sidebar-link'>
-                        <i class="bi bi-arrow-left-right"></i>
-                        <span>Pengembalian</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="{{ route('laporan.index') }}" class='sidebar-link'>
-                        <i class="bi bi-file-text"></i>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-file-text-fill"></i>
                         <span>Laporan</span>
                     </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="" class="submenu-link"'>
+
+                                <span> Lap. Anggota</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu-item  ">
+                            <a href="" class="submenu-link"'>
+
+                                <span> Lap. Koleksi</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu-item  ">
+                            <a href="" class="submenu-link"'>
+
+                                <span> Lap. Users</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu-item  ">
+                            <a href="" class="submenu-link"'>
+
+                                <span> Lap. Peminjaman</span>
+                            </a>
+                        </li>
+
+                        <li class="submenu-item  ">
+                            <a href="" class="submenu-link"'>
+
+                                <span> Lap. Pengembalian</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+                </li>
+                {{-- <li class="sidebar-item">
+                    <a href="{{ route('laporan.index') }}" class='sidebar-link'>
+                    </a>
+                </li> --}}
                 <li class="sidebar-item  ">
                     <a href="{{ route('logout') }}" class='sidebar-link'>
-                        <i class="bi bi-cash"></i>
+                        <i class="bi bi-box-arrow-left"></i>
                         <span>Logout</span>
                     </a>
                 </li>

@@ -14,8 +14,8 @@
                                     <div class="col-md-6">
                                         <input type="text" id="nm_pengguna" class="form-control" name="nm_pengguna"
                                             required autofocus>
-                                        @if ($errors->has('name'))
-                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @if ($errors->has('nm_pengguna'))
+                                            <span class="text-danger">{{ $errors->first('nm_pengguna') }}</span>
                                         @endif
                                     </div>
                                 </div>

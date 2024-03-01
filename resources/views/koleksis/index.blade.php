@@ -11,56 +11,54 @@
                     @endif
                     {{-- <div class="card-header">{{ __('Ini Table Anggota') }}</div> --}}
                     <div class="card-body">
-                        <a href="{{ route('anggota.create') }}" class="btn btn-sm btn-secondary">
-                            Tambah Anggota
+                        <a href="{{ route('koleksi.create') }}" class="btn btn-sm btn-secondary">
+                            Tambah Koleksi
                         </a>
-                        <table class="table">
+                        <table class="table mt-3">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Kode Anggota</th>
-                                    <th scope="col">Nama Anggota</th>
-                                    <th scope="col">Jk</th>
-                                    <th scope="col">Tmpt Lahir</th>
-                                    <th scope="col">Tgl Lahir</th>
-                                    <th scope="col">Alamat</th>
-                                    <th scope="col">No Hp</th>
-                                    <th scope="col">Jns Anggota</th>
+                                    <th scope="col">Kode Koleksi</th>
+                                    <th scope="col">Judul Koleksi</th>
+                                    <th scope="col">Jenis Koleksi</th>
+                                    <th scope="col">Pengarang</th>
+                                    <th scope="col">Tahun</th>
+                                    <th scope="col">Edisi</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Jml Pinjam</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 0; ?>
-                                @foreach ($anggotas as $row)
+                                @foreach ($koleksis as $row)
                                     <?php $no++; ?>
                                     <tr>
                                         <th scope="row">{{ $no }}</th>
-                                        <td>{{ $row->kd_anggota }}</td>
-                                        <td>{{ $row->nm_anggota }}</td>
-                                        <td>{{ $row->jk }}</td>
-                                        <td>{{ $row->tp_lahir }}</td>
-                                        <td>{{ $row->tg_lahir }}</td>
-                                        <td>{{ $row->alamat }}</td>
-                                        <td>{{ $row->no_hp }}</td>
-                                        <td>{{ $row->jns_anggota }}</td>
+                                        <td>{{ $row->kd_koleksi }}</td>
+                                        <td>{{ $row->judul }}</td>
+                                        <td>{{ $row->jns_koleksi }}</td>
+                                        <td>{{ $row->pengarang }}</td>
+                                        <td>{{ $row->tahun }}</td>
+                                        <td>{{ $row->edisi }}</td>
                                         <td>{{ $row->status }}</td>
                                         <td>
-                                            <a href="{{ route('anggota.edit', $row->id) }}" class="btn btn-sm btn-warning">
-                                                Edit
+                                            <a href="{{ route('koleksi.edit', $row->id) }}" class="btn btn-sm btn-warning">
+                                                <i class="bi bi-pencil"></i>
                                             </a>
-                                            <form action="{{ route('anggota.destroy', $row->id) }}" method="POST"
+                                            <a href="{{ route('koleksi.show', $row->id) }}" class="btn btn-sm btn-info">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <form action="{{ route('koleksi.destroy', $row->id) }}" method="POST"
                                                 style="display: inline"
                                                 onsubmit="return confirm('Do you really want to delete {{ $row->name }}?');">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger"><span
-                                                        class="text-muted">
-                                                        Delete
-                                                    </span></button>
+                                                <button type="submit" class="btn btn-sm btn-danger">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
                                             </form>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>

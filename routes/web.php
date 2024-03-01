@@ -4,7 +4,7 @@ use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\BukuController;
+use App\Http\Controllers\KoleksiController;
 use App\Http\Controllers\KembaliController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PinjamController;
@@ -36,12 +36,13 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 // Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::resource('users', UserController::class); //users.index, users.create, users.edit, users.update, users.destroy
 // Route::get('ruangans', [RuangController::class, 'indexPage'])->name('ruangans.page');
-Route::resource('pinjam', PinjamController::class);
 
 Route::resource('kembali', KembaliController::class);
 
-Route::resource('buku', BukuController::class);
+Route::resource('koleksi', KoleksiController::class);
 
 Route::resource('anggota', AnggotaController::class);
 
 Route::resource('laporan', LaporanController::class);
+
+Route::resource('pinjam', PinjamController::class);
